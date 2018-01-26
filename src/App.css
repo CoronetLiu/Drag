@@ -1,0 +1,46 @@
+html,body{
+  background:#ccc;
+}
+*{
+  margin:0;
+  padding:0;
+}
+#top-cl{
+  overflow: hidden;
+}
+#myCanvas{
+  float:left;
+}
+#container{
+  float:right;
+  width:500px;
+  height:300px;
+  border:2px solid #f00;
+  margin:10px;
+}
+#disk,#power{
+  cursor:move;
+  border:1px solid #0f0;
+  float:left;
+}
+#moveDiv{
+  cursor:move;
+  border:1px solid #00f;
+}
+label{
+  margin-left:30px;
+}
+.data{
+  background:#fff;
+  border:none;
+  border:1px solid #ccc;
+  height:20px;
+  width:40px;
+  padding:0 10px;
+  margin-left:5px;
+}
+#confirm{
+  margin-left:50px;
+  height:30px;
+  width:40px;
+}
