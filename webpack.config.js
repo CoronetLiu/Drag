@@ -44,7 +44,7 @@ module.exports = {
         }
     },
     plugins:[  //插件配置
-        new webpack.NoEmitOnErrorsPlugin(), //错误不编译
+        // new webpack.NoEmitOnErrorsPlugin(), //错误不编译
         new HtmlWebpackPlugin({  //抽离html
             // title: 'CoronetLiu', //标题
             favicon: './src/favicon.ico', //favicon路径
