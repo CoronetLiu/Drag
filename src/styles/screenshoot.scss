@@ -1,14 +1,32 @@
+#top-cl-s{
+    overflow:hidden;
+}
 #container-s,#box-s{
   float:left;
   border:1px solid #f0f;
-  width:650px;
-  height:350px;
-  text-align:center;
-  margin:30px 0 0 20px;
+  width:600px;
+  height:300px;
+  text-align:center !important;
+  margin:50px 0 20px 20px;
+}
+#data-box-s{
+    padding:0 100px;
+}
+#btn-s{
+    height:30px;
+    width:70px;
+    margin-right:100px;
+}
+#save-s{
+    height:30px;
+    width:40px;
+}
+#box-s{
+    width:700px;
 }
 #myCanvas-s{
   display:none;
   position:absolute;
-  left:50px;
-  top:350px;
+  left:640px;
+  top:50px;
 }

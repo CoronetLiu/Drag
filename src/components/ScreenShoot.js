@@ -6,9 +6,9 @@ import {Link,broswerHistory} from "react-router";
 //全局画笔
 let ctx = {};
 let jcrop_api = {};
-let boundx = 0;
-let boundy = 0;
-let base64 = [];
+// let boundx = 0;
+// let boundy = 0;
+let base64 = "";
 
 class ScreenShoot extends React.Component {
     constructor(props) {
@@ -21,14 +21,20 @@ class ScreenShoot extends React.Component {
     render() {
         console.log("render")
         return (
-            <div id="warp">
-                <div id="container-s">
-                  <img  src="./images/yourname.png" alt="" id="target-s" width="600px" height="300px"/>
-                  <input id="btn-s" type="button" value="确认截图"/>
+            <div id="warp-s">
+                <Link to="/drag" id="turn-sd">切换</Link>
+                <div id="top-cl-s">
+                    <div id="container-s">
+                        <img src='../resource/images/yourname.png' alt="" id="target-s" width="600px" height="300px"/>
+
+                    </div>
+                    <div id="box-s"></div>
                 </div>
-                <div id="box-s"></div>
                 <canvas id="myCanvas-s"></canvas>
-                <Link to="/drag" id="turn">切换</Link>
+                <div id="data-box-s">
+                    <input id="btn-s" type="button" value="确认截图"/>
+                    <input id="save-s" type="button" value="保存"/>
+                </div>
             </div>
         );
     }
@@ -66,19 +72,20 @@ class ScreenShoot extends React.Component {
           var img = new Image();
           img.src = canvasSrc;
           ctx.drawImage(img,canvasStartX,canvasStartY);
-          base64[0] = $("#myCanvas-s")[0].toDataURL("image/png");
+          // base64[0] = $("#myCanvas-s")[0].toDataURL("image/png");
+          base64 = $("#myCanvas-s")[0].toDataURL("image/png");
         }
 
         $("#btn-s").on("click",function(){
-          console.log(base64[0])
-          if(base64[0] === "data:," || base64[0] === "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAYAAABkW7XSAAAAxUlEQVR4nO3BMQEAAADCoPVPbQhfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOA1v9QAATX68/0AAAAASUVORK5CYII="){
+          console.log(base64)
+          if(base64 === "" || base64 === "data:," || base64 === "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAYAAABkW7XSAAAAxUlEQVR4nO3BMQEAAADCoPVPbQhfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOA1v9QAATX68/0AAAAASUVORK5CYII="){
             alert("请选择截图区域！")
             return ;
           }
-          var Img = '<img src="'+base64[0]+'"/>';
+          var Img = '<img src="'+base64+'"/>';
           $("#box-s").append(Img);
 
-          base64[0] = "data:,"
+          base64 = ""
 
           $("#myCanvas-s").css({
             display:"none"

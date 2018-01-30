@@ -5,18 +5,33 @@ html,body{
   margin:0;
   padding:0;
 }
+ul,li,ol{
+  list-style:none;
+}
+#turn-sd{
+  position:absolute;
+  z-index:10;
+  left:40px;
+  top:12px;
+  height:23px;
+  width:40px;
+  border:1px solid blue;
+  text-decoration: none;
+  text-align:center;
+}
 #top-cl{
   overflow: hidden;
 }
 #myCanvas{
   float:left;
+  margin:50px 0 0 20px;
 }
 #container{
   float:right;
   width:500px;
   height:300px;
   border:2px solid #f00;
-  margin:10px;
+  margin:50px 20px 0 0;
 }
 #disk,#power{
   cursor:move;
