@@ -10,23 +10,31 @@
   margin:50px 0 20px 20px;
 }
 #data-box-s{
-    padding:0 100px;
+    padding:0 50px;
 }
 #btn-s{
     height:30px;
     width:70px;
     margin-right:100px;
 }
-#save-s{
+#save-disk-s{
+    background:#eef;
+    display:inline-block;
     height:30px;
-    width:40px;
+    width:90px;
+    line-height: 30px;
+    text-align:center;
+    text-decoration:none;
+    border-radius:5px;
 }
 #box-s{
     width:700px;
 }
 #myCanvas-s{
-  display:none;
+  float:left;
   position:absolute;
   left:640px;
   top:50px;
+  display:none;
+  border:1px solid red;
 }

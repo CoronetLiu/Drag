@@ -40,7 +40,7 @@ class App extends React.Component {
     dataChangeX(e){
         var _left = Number(e.target.value)
         $("#moveDiv").css({
-            left:_left
+            left:_left+20
         })
         this.setState({
             x:_left
@@ -49,7 +49,7 @@ class App extends React.Component {
     dataChangeY(e){
         var _top = Number(e.target.value)
         $("#moveDiv").css({
-            top:_top
+            top:_top+50
         })
         this.setState({
             y:_top
@@ -121,8 +121,8 @@ class App extends React.Component {
                 var _top = cHeight - offsetY;
 
                 _this.setState({
-                    x:_left,
-                    y:_top
+                    x:_left-20,
+                    y:_top-50
                 })
                 $("#moveDiv").css({
                     top:_top,
@@ -153,8 +153,8 @@ class App extends React.Component {
                 var _top = cHeight - offsetY;
 
                 _this.setState({
-                    x:_left,
-                    y:_top
+                    x:_left-20,
+                    y:_top-50
                 })
 
                 $("#moveDiv").css({

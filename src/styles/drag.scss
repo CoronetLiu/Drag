@@ -43,14 +43,16 @@ ul,li,ol{
   border:1px solid #00f;
 }
 label{
-  margin-left:30px;
+  margin:30px;
+  display:inline-block;
+  width:80px;
 }
 .data{
   background:#fff;
   border:none;
   border:1px solid #ccc;
   height:20px;
-  width:40px;
+  width:30px;
   padding:0 10px;
   margin-left:5px;
 }
