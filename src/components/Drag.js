@@ -67,10 +67,10 @@ class App extends React.Component {
     }
     componentDidMount(){
         var _this = this;
-        ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx = $("#myCanvas")[0].getContext("2d");
         ctx.strokeRect(0,0,800,300);
-        var oDisk = document.getElementById("disk")
-        var oPower = document.getElementById("power")
+        var oDisk = $("#disk")[0];
+        var oPower = $("#power")[0];
         //拖动事件开始
         oDisk.onmousedown = oPower.onmousedown = function(event){
             var e = event || window.event;
