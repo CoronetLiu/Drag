@@ -6,7 +6,7 @@ import $ from "jquery";
 //全局画笔
 let ctx = {}
 
-class App extends React.Component {
+class Drag extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,18 +20,19 @@ class App extends React.Component {
         console.log("render")
         return (
             <div id="warp">
-                <Link to="/screenshoot" id="turn-sd">切换</Link>
-                <div id="top-cl">
-                    <canvas id="myCanvas" width="800" height="300"></canvas>
-                    <div id="container">
+                <Link to="/screenshoot" id="turn-1">截图</Link>
+                <Link to="/combine" id="turn-2">二合一</Link>
+                <div id="top-d">
+                    <canvas id="myCanvas-d" width="800" height="200"></canvas>
+                    <div id="container-d">
                         <img src='../resource/images/img1.png' alt="" id="disk"/>
                         <img src='../resource/images/img2.png' alt="" id="power"/>
                     </div>
                 </div>
-                <div id="data-box">
-                    <label>X:<input type="text" className="data x" value={this.state.x} onChange={this.dataChangeX.bind(this)}/></label>
-                    <label>Y:<input type="text" className="data y" value={this.state.y} onChange={this.dataChangeY.bind(this)}/></label>
-                    <button type="" id="confirm" onClick={this.confirm.bind(this)}>确定</button>
+                <div id="data-box-d">
+                    <label>X:<input type="text" className="data-d x" value={this.state.x} onChange={this.dataChangeX.bind(this)}/></label>
+                    <label>Y:<input type="text" className="data-d y" value={this.state.y} onChange={this.dataChangeY.bind(this)}/></label>
+                    <button type="" id="confirm-d" onClick={this.confirm.bind(this)}>确定</button>
                 </div>
             </div>
         );
@@ -67,8 +68,8 @@ class App extends React.Component {
     }
     componentDidMount(){
         var _this = this;
-        ctx = $("#myCanvas")[0].getContext("2d");
-        ctx.strokeRect(0,0,800,300);
+        ctx = $("#myCanvas-d")[0].getContext("2d");
+        ctx.strokeRect(0,0,800,200);
         var oDisk = $("#disk")[0];
         var oPower = $("#power")[0];
         //拖动事件开始
@@ -170,4 +171,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default Drag;

@@ -1,35 +1,15 @@
-html,body{
-  background:#ccc;
-}
-*{
-  margin:0;
-  padding:0;
-}
-ul,li,ol{
-  list-style:none;
-}
-#turn-sd{
-  position:absolute;
-  z-index:10;
-  left:40px;
-  top:12px;
-  height:23px;
-  width:40px;
-  border:1px solid blue;
-  text-decoration: none;
-  text-align:center;
-}
-#top-cl{
+
+#top-d{
   overflow: hidden;
 }
-#myCanvas{
+#myCanvas-d{
   float:left;
   margin:50px 0 0 20px;
 }
-#container{
+#container-d{
   float:right;
   width:500px;
-  height:300px;
+  height:200px;
   border:2px solid #f00;
   margin:50px 20px 0 0;
 }
@@ -43,11 +23,11 @@ ul,li,ol{
   border:1px solid #00f;
 }
 label{
-  margin:30px;
+  margin-left:20px;
   display:inline-block;
   width:80px;
 }
-.data{
+.data-d{
   background:#fff;
   border:none;
   border:1px solid #ccc;
@@ -56,7 +36,7 @@ label{
   padding:0 10px;
   margin-left:5px;
 }
-#confirm{
+#confirm-d{
   margin-left:50px;
   height:30px;
   width:40px;

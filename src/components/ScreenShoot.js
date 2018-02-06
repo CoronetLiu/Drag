@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import {Link,broswerHistory} from "react-router";
 // import $ from "jquery";
 
-//全局画笔
-let ctx = {};
+
 let jcrop_api = {};
 // let boundx = 0;
 // let boundy = 0;
@@ -23,12 +22,12 @@ class ScreenShoot extends React.Component {
     render() {
         console.log("render")
         return (
-            <div id="warp-s">
-                <Link to="/drag" id="turn-sd">切换</Link>
-                <div id="top-cl-s">
+            <div id="warp">
+                <Link to="/drag" id="turn-1">拼接</Link>
+                <Link to="/combine" id="turn-2">二合一</Link>
+                <div id="top-s">
                     <div id="container-s">
                         <img src='../resource/images/yourname.png' alt="" id="target-s" width="600px" height="300px"/>
-
                     </div>
                     <div id="box-s"></div>
                 </div>
@@ -37,7 +36,7 @@ class ScreenShoot extends React.Component {
                     <label>宽：<span>{this.state.width}</span></label>
                     <label>高：<span>{this.state.height}</span></label>
                     <input id="btn-s" type="button" value="确认截图"/>
-                    <a href={this.state.base64} id="save-disk-s">保存为DISK</a>
+                    <a href={this.state.base64} id="save-disk-s">保存为DISK-8</a>
                 </div>
             </div>
         );
@@ -117,34 +116,45 @@ class ScreenShoot extends React.Component {
         //保存
         $("#save-disk-s").on("click",function(e){
             // alert("保存")
-            var base64 = e.target.href;
-            console.log(convertBase64UrlToBlob(base64, "png"))
-            $.ajax({
-                url:"../../resource/datas/test.json",
-                type:"GET",
-                dataType: "json",
-                data:[convertBase64UrlToBlob(base64, "png"),"fileName"]
-            }).then(function(res){
-                console.log(res)
-            },function(){
-                alert("失败")
-            })
+            // var fileName = [];
+            // var base64 = e.target.href;
+            for(var i = 0;i < 8; i ++){
+                (function(){
+                    $.ajax({
+                        url:"../../resource/datas/test.json",
+                        type:"GET",
+                        dataType: "json",
+                        // data:[convertBase64UrlToBlob(base64, "png"),"fileName"]
+                        data:{
+                                "id":"id",
+                                // "fileUrl":base64,
+                                "fileName":"fileName_" + i + ".png"
+                            },
+                        success:function(res){
+                            console.log(res)
+                        },
+                        error:function(){
+                            alert("失败")
+                        }
+                    })
+                })(i)
+            }
 
             return false;
         })
-        // ------- 将以base64的图片url数据转换为Blob ------
-        function convertBase64UrlToBlob(urlData, filetype){
-            //去掉url的头，并转换为byte
-            var bytes = window.atob(urlData.split(',')[1]);
-            //处理异常,将ascii码小于0的转换为大于0
-            var ab = new ArrayBuffer(bytes.length);
-            var ia = new Uint8Array(ab);
-            var i;
-            for (i = 0; i < bytes.length; i++) {
-                ia[i] = bytes.charCodeAt(i);
-            }
-            return new Blob([ab], {type : filetype});
-        }
+        // // ------- 将以base64的图片url数据转换为Blob ------
+        // function convertBase64UrlToBlob(urlData, filetype){
+        //     //去掉url的头，并转换为byte
+        //     var bytes = window.atob(urlData.split(',')[1]);
+        //     //处理异常,将ascii码小于0的转换为大于0
+        //     var ab = new ArrayBuffer(bytes.length);
+        //     var ia = new Uint8Array(ab);
+        //     var i;
+        //     for (i = 0; i < bytes.length; i++) {
+        //         ia[i] = bytes.charCodeAt(i);
+        //     }
+        //     return new Blob([ab], {type : filetype});
+        // }
     }
 }
 

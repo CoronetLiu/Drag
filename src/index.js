@@ -8,6 +8,7 @@ import './index.css';
 import App from './App';
 import ScreenShoot from './components/ScreenShoot';
 import Drag from './components/Drag';
+import Combine from './components/Combine';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
             <Route path="/" component={App}>
                 <Route path="/screenshoot" component={ScreenShoot}></Route>
                 <Route path="/drag" component={Drag}></Route>
+                <Route path="/combine" component={Combine}></Route>
                 <IndexRedirect to='/drag'/>
                 {/* <Route path="/mine" component={Mine}>
                         <Route path="/login" component={Login}></Route>

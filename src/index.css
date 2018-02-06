@@ -1,2 +1,29 @@
 @import "./styles/screenshoot.scss";
 @import "./styles/drag.scss";
+@import "./styles/combine.scss";
+
+html,body{
+  background:#ccc;
+}
+*{
+  margin:0;
+  padding:0;
+}
+ul,li,ol{
+  list-style:none;
+}
+
+#turn-1,#turn-2{
+  position:absolute;
+  z-index:10;
+  left:40px;
+  top:12px;
+  height:23px;
+  width:80px;
+  border:1px solid blue;
+  text-decoration: none;
+  text-align:center;
+}
+#turn-2{
+  left:140px;
+}

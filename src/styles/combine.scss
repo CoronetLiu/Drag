@@ -1,0 +1,86 @@
+/*
+* @Author:  CoronetLiu
+* @Date:    2018-02-05 10:49:23
+* @Last Modified by:    CoronetLiu
+* @Last Modified time:  2018-02-05 17:18:26
+* @Email:   liu86931@163.com
+*/
+
+
+#top-c{
+  overflow: hidden;
+}
+#myCanvas-c{
+  float:left;
+  margin:10px 0 0 20px;
+}
+#container-c{
+  float:left;
+  width:1300px;
+  height:250px;
+  border:2px solid #f00;
+  margin:0px 20px;
+}
+#moveDiv{
+  cursor:move;
+  border:1px solid #00f;
+}
+label{
+  margin-left:20px;
+  display:inline-block;
+  width:80px;
+}
+#data-box-c{
+    padding-left:250px;
+    margin-top:8px;
+}
+#data-inner-box-c{
+    float:right;
+    margin-right:150px;
+}
+#btn-c{
+    margin:0 20px;
+    height:30px;
+    width:80px;
+}
+.data-c{
+  background:#fff;
+  border:none;
+  border:1px solid #ccc;
+  height:20px;
+  width:30px;
+  padding:0 10px;
+  margin-left:5px;
+}
+#confirm-c{
+  margin-left:50px;
+  height:30px;
+  width:80px;
+}
+#box-c{
+  float:left;
+  border:1px solid #f0f;
+  width:600px;
+  height:300px;
+  text-align:center !important;
+  margin:10px 0 20px 20px;
+}
+#save-disk-c{
+    background:#eef;
+    display:inline-block;
+    height:28px;
+    width:80px;
+    line-height: 28px;
+    text-align:center;
+    text-decoration:none;
+    border-radius:10px;
+    margin-left:50px;
+}
+#myCanvas-cc{
+  float:left;
+  position:absolute;
+  left:640px;
+  top:350px;
+  display:none;
+  border:1px solid red;
+}
