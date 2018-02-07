@@ -2,7 +2,7 @@
 * @Author:  CoronetLiu
 * @Date:    2018-02-05 10:47:45
 * @Last Modified by:    CoronetLiu
-* @Last Modified time:  2018-02-06 08:58:31
+* @Last Modified time:  2018-02-06 10:47:35
 * @Email:   liu86931@163.com
 */
 
@@ -98,14 +98,18 @@ class Combine extends React.Component {
                 case "disk":
                     obj = {
                         "x":this.state.x,
-                        "y":this.state.y
+                        "y":this.state.y,
+                        "height":this.state.currentObj.height,
+                        "width":this.state.currentObj.width
                     }
                     typeDisk.push(obj);
                     break;
                 case "power":
                     obj = {
                         "x":this.state.x,
-                        "y":this.state.y
+                        "y":this.state.y,
+                        "height":this.state.currentObj.height,
+                        "width":this.state.currentObj.width
                     }
                     typePower.push(obj);
                     break;
@@ -136,12 +140,14 @@ class Combine extends React.Component {
             var y = e.clientY - e.offsetY;
 
             if(!$("#moveDiv").get(0)){
-                var oD = document.createElement("div")
+                // var oD = document.createElement("div")
+                var oD = new Image()
+                oD.src = this.src
                 oD.className = this.id
                 oD.id = "moveDiv"
 
                 $(oD).css({
-                    background : 'url(' + this.src + ')',
+                    // background : 'url(' + this.src + ')',
                     height:this.height,
                     width:this.width,
                     position:"absolute",
@@ -151,7 +157,7 @@ class Combine extends React.Component {
                 $("#warp")[0].appendChild(oD)
             }else{
                 $("#moveDiv").css({
-                    background : 'url(' + this.src + ')',
+                    // background : 'url(' + this.src + ')',
                     height:this.height,
                     width:this.width,
                     position:"absolute",
@@ -310,6 +316,8 @@ class Combine extends React.Component {
                         "picName":tp + "_" + i + ".png",
                         "x":arr[i].x,
                         "y":arr[i].y,
+                        "height":arr[i].height,
+                        "width":arr[i].width,
                         "front":1
                     },
                 success:function(res){
